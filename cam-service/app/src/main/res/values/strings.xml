@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Camera Service</string>
+    <string name="tile_label">Camera Service</string>
+</resources>
