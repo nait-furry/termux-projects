@@ -25,27 +25,18 @@ Or add the **Camera Service** Quick Settings tile and tap it.
 
 ## Control
 
-```bash
-printf 'ping\n' | adb shell nc 127.0.0.1 8989
-printf 'start\n' | adb shell nc 127.0.0.1 8989
-printf 'front\n' | adb shell nc 127.0.0.1 8989
-printf 'back\n' | adb shell nc 127.0.0.1 8989
-printf 'switch\n' | adb shell nc 127.0.0.1 8989
-printf 'burst 5\n' | adb shell nc 127.0.0.1 8989
-printf 'start-video\n' | adb shell nc 127.0.0.1 8989
-printf 'stop-video\n' | adb shell nc 127.0.0.1 8989
-printf 'stop\n' | adb shell nc 127.0.0.1 8989
-```
-
-From Termux:
+Use broadcast intents via `am broadcast` (ADB) or equivalent from Termux. Examples:
 
 ```bash
-scripts/camera-control.sh start
-scripts/camera-control.sh burst 5
-scripts/camera-control.sh switch
-scripts/camera-control.sh start-video
-scripts/camera-control.sh stop-video
-scripts/camera-control.sh stop
+adb shell am broadcast -a com.termux.camera.START
+adb shell am broadcast -a com.termux.camera.STOP
+adb shell am broadcast -a com.termux.camera.CAPTURE
+adb shell am broadcast -a com.termux.camera.BURST --ei count 5
+adb shell am broadcast -a com.termux.camera.SWITCH
+adb shell am broadcast -a com.termux.camera.FRONT
+adb shell am broadcast -a com.termux.camera.BACK
+adb shell am broadcast -a com.termux.camera.START_VIDEO
+adb shell am broadcast -a com.termux.camera.STOP_VIDEO
 ```
 
 ## Test

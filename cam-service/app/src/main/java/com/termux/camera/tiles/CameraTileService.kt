@@ -10,16 +10,13 @@ class CameraTileService : TileService() {
 
     override fun onStartListening() {
         super.onStartListening()
-        qsTile?.state = Tile.STATE_INACTIVE
-        qsTile?.updateTile()
+        updateTileState()
     }
 
     override fun onClick() {
         super.onClick()
-        val tile = qsTile ?: return
-        if (tile.state == Tile.STATE_ACTIVE) {
+        if (CameraForegroundService.isRunning) {
             stopService(Intent(this, CameraForegroundService::class.java))
-            tile.state = Tile.STATE_INACTIVE
         } else {
             val intent = Intent(this, CameraForegroundService::class.java)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -27,7 +24,24 @@ class CameraTileService : TileService() {
             } else {
                 startService(intent)
             }
+        }
+        updateTileState()
+    }
+
+    private fun updateTileState() {
+        val tile = qsTile ?: return
+        if (CameraForegroundService.isRunning) {
             tile.state = Tile.STATE_ACTIVE
+            tile.label = "Camera Service Running"
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                tile.subtitle = "Stop Camera Service"
+            }
+        } else {
+            tile.state = Tile.STATE_INACTIVE
+            tile.label = "Camera Service Stopped"
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                tile.subtitle = "Start Camera Service"
+            }
         }
         tile.updateTile()
     }

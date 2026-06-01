@@ -25,7 +25,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".ui.ScriptConsoleActivity"
+            android:name=".ui.SettingsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,14 +33,29 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".ui.SettingsActivity"
-            android:exported="false" />
-
         <service
             android:name=".service.CameraForegroundService"
             android:exported="true"
             android:foregroundServiceType="camera|microphone" />
+
+        <receiver
+            android:name=".service.CameraCommandReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.termux.camera.START" />
+                <action android:name="com.termux.camera.STOP" />
+                <action android:name="com.termux.camera.FRONT" />
+                <action android:name="com.termux.camera.BACK" />
+                <action android:name="com.termux.camera.SWITCH" />
+                <action android:name="com.termux.camera.CAPTURE" />
+                <action android:name="com.termux.camera.BURST" />
+                <action android:name="com.termux.camera.START_VIDEO" />
+                <action android:name="com.termux.camera.STOP_VIDEO" />
+                <action android:name="com.termux.camera.SET_RATE" />
+                <action android:name="com.termux.camera.SET_MODE" />
+                <action android:name="com.termux.camera.SET_RESOLUTION" />
+            </intent-filter>
+        </receiver>
 
         <service
             android:name=".tiles.CameraTileService"

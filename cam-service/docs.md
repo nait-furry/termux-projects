@@ -1,17 +1,16 @@
-# Procedure
+# Camera Service — Developer Notes
+
+This module implements a foreground Android camera service with headless control via Quick Settings tile and broadcast intents.
 
 ## Implementation Summary
 
-This folder is a standalone Android camera service project. The implementation includes:
-
-- `CameraForegroundService.kt` — foreground service lifecycle and notification
-- `CameraController.kt` — Camera2 open/close, capture session, burst capture, switching, JPEG saving, cleanup
-- `CommandServer.kt` — local command server on `127.0.0.1:8989`
-- `VideoRecorder.kt` — `MediaRecorder` video recording support
-- `CameraTileService.kt` — Quick Settings tile to start/stop the service
-- `ScriptConsoleActivity.kt` — minimal launcher UI and command entry
-- `ShellApi.kt` — local socket command client
-- `scripts/camera-control.sh` — Termux wrapper for sending commands
+- `CameraForegroundService.kt` — foreground service lifecycle, notification, action handling
+- `CameraController.kt` — Camera2 lifecycle, burst capture, switching, JPEG saving
+- `VideoRecorder.kt` — `MediaRecorder` integration for MP4 recording
+- `CameraTileService.kt` — Quick Settings tile implementation
+- `SettingsActivity.kt` — lightweight settings UI for persistent configuration
+- `CameraCommandReceiver.kt` — broadcast receiver to accept external control commands
+- `ObstructionDetector.kt` / `ExposureAnalyzer.kt` — basic frame analysis utilities
 
 ## Build and Install
 
@@ -24,66 +23,35 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 ## Runtime Notes
 
 - The app requests runtime permissions for `CAMERA`, `RECORD_AUDIO`, and (on Android 13+) `POST_NOTIFICATIONS`.
-- The service is declared as `android:exported="false"`, so it is intended to be started from within the app or the Quick Settings tile, not from an external UID.
-- The command server listens only on localhost and is used by the activity and Termux wrapper.
+- The service is exported to allow control via broadcast intents (`CameraCommandReceiver`).
 - Captures are saved without a preview surface via `ImageReader`.
 - JPEGs are written to `Pictures/CameraService` on Android Q+.
 - Video files are written to the app-specific external Movies directory.
 
 ## Starting the Service
 
-From the app UI:
+From the UI: open the `SettingsActivity`, grant permissions, and use the Quick Settings tile to start/stop.
 
-- Open **Camera Service**
-- Grant any requested permissions
-- Tap `Start`
-
-From the Quick Settings tile:
-
-- Add the **Camera Service** tile
-- Tap to toggle the foreground service on/off
-
-> Note: `adb shell am start-foreground-service` may fail because the service is not exported.
-
-## Local Commands
-
-The service listens on:
-
-- host: `127.0.0.1`
-- port: `8989`
-
-Supported commands:
-
-- `ping`
-- `start`
-- `front`
-- `back`
-- `stop`
-- `switch`
-- `burst [count]`
-- `start-video`
-- `stop-video`
-
-From an Android shell:
+From ADB / Termux: start the foreground service directly (if needed):
 
 ```bash
-printf 'ping\n' | adb shell nc 127.0.0.1 8989
-printf 'burst 5\n' | adb shell nc 127.0.0.1 8989
-printf 'switch\n' | adb shell nc 127.0.0.1 8989
-printf 'start-video\n' | adb shell nc 127.0.0.1 8989
-printf 'stop-video\n' | adb shell nc 127.0.0.1 8989
-printf 'stop\n' | adb shell nc 127.0.0.1 8989
+adb shell am start-foreground-service -n com.termux.camera/.service.CameraForegroundService
 ```
 
-From Termux on-device:
+## Broadcast control (ADB / Termux)
+
+Use `am broadcast` to send commands to the app. Example commands:
 
 ```bash
-chmod +x scripts/camera-control.sh
-scripts/camera-control.sh ping
-scripts/camera-control.sh start
-scripts/camera-control.sh burst 5
-scripts/camera-control.sh switch
-scripts/camera-control.sh stop
+adb shell am broadcast -a com.termux.camera.START
+adb shell am broadcast -a com.termux.camera.STOP
+adb shell am broadcast -a com.termux.camera.CAPTURE
+adb shell am broadcast -a com.termux.camera.BURST --ei count 5
+adb shell am broadcast -a com.termux.camera.SWITCH
+adb shell am broadcast -a com.termux.camera.FRONT
+adb shell am broadcast -a com.termux.camera.BACK
+adb shell am broadcast -a com.termux.camera.START_VIDEO
+adb shell am broadcast -a com.termux.camera.STOP_VIDEO
 ```
 
 ## Testing
@@ -95,18 +63,16 @@ Run build and unit tests:
 ./gradlew assembleDebug
 ```
 
-Manual verification:
+Manual verification checklist:
 
 1. Launch the app and grant permissions.
-2. Start the service from the app or Quick Settings tile.
-3. Send `ping` and expect `ok`.
-4. Send `burst 3` and confirm JPEG files are created.
-5. Send `switch` and ensure the service remains active.
-6. Send `start-video`, wait, then send `stop-video`.
-7. Stop the service and confirm the notification disappears.
+2. Start the service from the Quick Settings tile or send a `START` broadcast.
+3. Send `CAPTURE` or `BURST` broadcasts and confirm JPEG files are created.
+4. Send `SWITCH`, `FRONT`, or `BACK` broadcasts and ensure camera switches.
+5. Send `START_VIDEO` then `STOP_VIDEO` and confirm an MP4 is created.
+6. Stop the service and confirm the notification disappears.
 
-## Notes
+## Notes and Next Steps
 
-- If local socket commands fail, verify the service is running and the command server is started.
-- The service uses localhost-only sockets; it does not expose a network-facing API.
-- If you later choose to support external start via `adb`, change `android:exported` on the service and/or add a permission guard.
+- The codebase no longer depends on a local TCP command server; documentation and scripts referencing `127.0.0.1:8989` have been removed or updated.
+- Remaining work: polish obstruction detection thresholds, add automated tests for receiver actions, and remove any leftover external wrapper scripts if present.

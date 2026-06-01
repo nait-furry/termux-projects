@@ -31,6 +31,7 @@ import java.nio.ByteBuffer
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.atomic.AtomicBoolean
@@ -49,6 +50,9 @@ class CameraController(private val context: Context) {
     private val pendingCaptures = AtomicInteger(0)
     private val exposureAnalyzer = ExposureAnalyzer()
     private val videoRecorder = VideoRecorder(context)
+    private val settings = CameraSettings(context)
+    private val darkFrameCounts = ConcurrentHashMap<String, Int>()
+    private val blockedCameraUntilMs = ConcurrentHashMap<String, Long>()
 
     @Volatile private var cameraDevice: CameraDevice? = null
     @Volatile private var captureSession: CameraCaptureSession? = null
@@ -282,6 +286,7 @@ class CameraController(private val context: Context) {
     private fun saveImage(image: Image) {
         try {
             if (pendingCaptures.get() <= 0) return
+            val cameraId = currentCameraId
             val buffer: ByteBuffer = image.planes[0].buffer
             val bytes = ByteArray(buffer.remaining())
             buffer.get(bytes)
@@ -294,9 +299,40 @@ class CameraController(private val context: Context) {
             if (score.isLikelyObstructed) {
                 Log.w(TAG, "Capture looks obstructed: variance=${score.variance}")
             }
+            if (cameraId != null) {
+                updateObstructionState(cameraId, bytes)
+            }
         } finally {
             image.close()
         }
+    }
+
+    private fun updateObstructionState(cameraId: String, bytes: ByteArray) {
+        val brightness = averageBrightness(bytes)
+        if (brightness < OBSTRUCTION_BRIGHTNESS_THRESHOLD) {
+            val count = darkFrameCounts.merge(cameraId, 1) { old, _ -> old + 1 } ?: 1
+            if (count >= OBSTRUCTION_FRAME_COUNT) {
+                blockedCameraUntilMs[cameraId] = System.currentTimeMillis() + OBSTRUCTION_RECOVERY_MS
+                Log.w(TAG, "Camera $cameraId marked blocked; average brightness=$brightness")
+            }
+        } else {
+            darkFrameCounts[cameraId] = 0
+            blockedCameraUntilMs.remove(cameraId)
+        }
+    }
+
+    private fun averageBrightness(bytes: ByteArray): Double {
+        if (bytes.isEmpty()) return 0.0
+        val step = (bytes.size / BRIGHTNESS_SAMPLE_SIZE).coerceAtLeast(1)
+        var count = 0
+        var sum = 0L
+        var index = 0
+        while (index < bytes.size) {
+            sum += bytes[index].toInt() and 0xFF
+            count += 1
+            index += step
+        }
+        return sum.toDouble() / count
     }
 
     private fun writeJpeg(name: String, bytes: ByteArray): Uri? {
@@ -351,13 +387,26 @@ class CameraController(private val context: Context) {
     }
 
     private fun selectCamera(front: Boolean): String {
-        for (id in cameraManager.cameraIdList) {
+        val availableIds = cameraManager.cameraIdList.toList()
+        val preferredIds = availableIds.filter { id ->
             val chars = cameraManager.getCameraCharacteristics(id)
             val facing = chars.get(CameraCharacteristics.LENS_FACING)
-            if (front && facing == CameraCharacteristics.LENS_FACING_FRONT) return id
-            if (!front && facing == CameraCharacteristics.LENS_FACING_BACK) return id
+            (front && facing == CameraCharacteristics.LENS_FACING_FRONT) ||
+                (!front && facing == CameraCharacteristics.LENS_FACING_BACK)
         }
-        return cameraManager.cameraIdList.first()
+        val candidates = preferredIds.ifEmpty { availableIds }
+        if (!settings.autoCameraSelection) return candidates.first()
+        return candidates.firstOrNull { !isCameraBlocked(it) } ?: availableIds.first()
+    }
+
+    private fun isCameraBlocked(cameraId: String): Boolean {
+        val blockedUntil = blockedCameraUntilMs[cameraId] ?: return false
+        if (System.currentTimeMillis() >= blockedUntil) {
+            blockedCameraUntilMs.remove(cameraId)
+            darkFrameCounts[cameraId] = 0
+            return false
+        }
+        return true
     }
 
     private fun isFrontCamera(id: String): Boolean {
@@ -371,8 +420,9 @@ class CameraController(private val context: Context) {
             ?.getOutputSizes(ImageFormat.JPEG)
             ?.toList()
             .orEmpty()
+        val maxSize = settings.maxJpegSize()
         return sizes
-            .filter { it.width <= 1920 && it.height <= 1080 }
+            .filter { it.width <= maxSize.width && it.height <= maxSize.height }
             .maxByOrNull { it.width * it.height }
             ?: sizes.maxByOrNull { it.width * it.height }
             ?: Size(1920, 1080)
@@ -414,5 +464,9 @@ class CameraController(private val context: Context) {
         private const val BURST_INTERVAL_MS = 250L
         private const val CAMERA_REOPEN_DELAY_MS = 300L
         private const val SHUTDOWN_WAIT_MS = 1_500L
+        private const val OBSTRUCTION_BRIGHTNESS_THRESHOLD = 5.0
+        private const val OBSTRUCTION_FRAME_COUNT = 30
+        private const val OBSTRUCTION_RECOVERY_MS = 60_000L
+        private const val BRIGHTNESS_SAMPLE_SIZE = 4096
     }
 }
