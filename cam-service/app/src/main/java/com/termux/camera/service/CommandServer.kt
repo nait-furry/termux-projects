@@ -4,6 +4,7 @@ import android.util.Log
 import java.io.BufferedReader
 import java.io.PrintWriter
 import java.net.InetAddress
+import java.net.InetSocketAddress
 import java.net.ServerSocket
 import java.net.Socket
 import java.net.SocketException
@@ -22,7 +23,10 @@ class CommandServer(private val controller: CameraController) {
         if (!running.compareAndSet(false, true)) return
         executor.execute {
             try {
-                serverSocket = ServerSocket(PORT, 4, InetAddress.getByName(HOST))
+                serverSocket = ServerSocket().apply {
+                    reuseAddress = true
+                    bind(InetSocketAddress(InetAddress.getByName(HOST), PORT), BACKLOG)
+                }
                 while (running.get()) {
                     val socket = serverSocket?.accept() ?: break
                     handleSocket(socket)
@@ -31,6 +35,13 @@ class CommandServer(private val controller: CameraController) {
                 if (running.get()) Log.e(TAG, "Command server socket error", error)
             } catch (error: Exception) {
                 Log.e(TAG, "Command server failed", error)
+            } finally {
+                running.set(false)
+                try {
+                    serverSocket?.close()
+                } catch (_: Exception) {
+                }
+                serverSocket = null
             }
         }
     }
@@ -76,6 +87,7 @@ class CommandServer(private val controller: CameraController) {
     companion object {
         const val HOST = "127.0.0.1"
         const val PORT = 8989
+        private const val BACKLOG = 4
         private const val TAG = "CommandServer"
         private val HELP = """
             commands: ping, start [front], front, back, stop, switch, burst [count], start-video, stop-video

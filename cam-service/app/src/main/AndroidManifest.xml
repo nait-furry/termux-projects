@@ -39,7 +39,7 @@
 
         <service
             android:name=".service.CameraForegroundService"
-            android:exported="false"
+            android:exported="true"
             android:foregroundServiceType="camera|microphone" />
 
         <service

@@ -31,6 +31,8 @@ import java.nio.ByteBuffer
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import java.util.concurrent.CountDownLatch
+import java.util.concurrent.TimeUnit
 import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicInteger
 
@@ -86,10 +88,17 @@ class CameraController(private val context: Context) {
         val current = currentCameraId
         val nextFront = current?.let { !isFrontCamera(it) } ?: true
         cameraHandler.post {
-            closeCameraLocked()
-            currentCameraId = selectCamera(nextFront)
-            openCamera(currentCameraId!!)
-            isSwitching.set(false)
+            try {
+                closeCameraLocked()
+                currentCameraId = selectCamera(nextFront)
+                cameraHandler.postDelayed({
+                    openCamera(currentCameraId!!)
+                    isSwitching.set(false)
+                }, CAMERA_REOPEN_DELAY_MS)
+            } catch (error: Exception) {
+                Log.e(TAG, "Unable to switch camera", error)
+                isSwitching.set(false)
+            }
         }
         return "switching camera"
     }
@@ -375,9 +384,26 @@ class CameraController(private val context: Context) {
     }
 
     fun shutdown() {
-        cameraHandler.post { closeCameraLocked() }
-        cameraThread.quitSafely()
-        imageThread.quitSafely()
+        val cleanupDone = CountDownLatch(1)
+        val cleanupPosted = cameraHandler.post {
+            try {
+                closeCameraLocked()
+            } finally {
+                cleanupDone.countDown()
+                cameraThread.quitSafely()
+                imageThread.quitSafely()
+            }
+        }
+        if (!cleanupPosted) {
+            cameraThread.quitSafely()
+            imageThread.quitSafely()
+            return
+        }
+        try {
+            cleanupDone.await(SHUTDOWN_WAIT_MS, TimeUnit.MILLISECONDS)
+        } catch (_: InterruptedException) {
+            Thread.currentThread().interrupt()
+        }
     }
 
     private fun timestamp(): String =
@@ -386,5 +412,7 @@ class CameraController(private val context: Context) {
     companion object {
         private const val TAG = "CameraController"
         private const val BURST_INTERVAL_MS = 250L
+        private const val CAMERA_REOPEN_DELAY_MS = 300L
+        private const val SHUTDOWN_WAIT_MS = 1_500L
     }
 }
