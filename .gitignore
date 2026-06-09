@@ -7,3 +7,13 @@
 .agents/
 
 *.log
+
+camera_log*
+
+
+# My own:
+learning*
+
+refactor*
+
+changes*

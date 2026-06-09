@@ -59,6 +59,9 @@ class CameraController(private val context: Context) {
     @Volatile private var imageReader: ImageReader? = null
     @Volatile private var currentCameraId: String? = null
     @Volatile private var currentSize: Size = Size(1920, 1080)
+    @Volatile private var cameraWarmupUntilMs: Long = 0
+
+    private fun isWarmingUp(): Boolean = System.currentTimeMillis() < cameraWarmupUntilMs
 
     fun startCamera(front: Boolean = false): String {
         if (!hasCameraPermission()) return "missing CAMERA permission"
@@ -123,6 +126,7 @@ class CameraController(private val context: Context) {
         cameraHandler.post {
             val camera = cameraDevice ?: return@post
             try {
+                Log.i(TAG, "VIDEO_START_REQUEST")
                 val reader = imageReader ?: ImageReader.newInstance(
                     currentSize.width,
                     currentSize.height,
@@ -130,12 +134,14 @@ class CameraController(private val context: Context) {
                     5
                 ).also { imageReader = it }
                 val recorderSurface = videoRecorder.prepare(currentSize)
+                Log.i(TAG, "VIDEO_SURFACE_CREATED")
                 captureSession?.close()
                 camera.createCaptureSession(
                     listOf(reader.surface, recorderSurface),
                     object : CameraCaptureSession.StateCallback() {
                         override fun onConfigured(session: CameraCaptureSession) {
                             captureSession = session
+                            Log.i(TAG, "VIDEO_SESSION_CREATED")
                             val request = camera.createCaptureRequest(CameraDevice.TEMPLATE_RECORD).apply {
                                 addTarget(recorderSurface)
                                 set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO)
@@ -166,6 +172,7 @@ class CameraController(private val context: Context) {
 
     fun stopVideo(): String {
         cameraHandler.post {
+            Log.i(TAG, "VIDEO_STOP_REQUEST")
             val result = videoRecorder.stop()
             Log.i(TAG, result)
             cameraDevice?.let { createCaptureSession(it) }
@@ -188,6 +195,7 @@ class CameraController(private val context: Context) {
 
     private val cameraStateCallback = object : CameraDevice.StateCallback() {
         override fun onOpened(camera: CameraDevice) {
+            Log.i(TAG, "CAMERA_OPENED ${camera.id}")
             cameraDevice = camera
             isOpening.set(false)
             createCaptureSession(camera)
@@ -223,6 +231,17 @@ class CameraController(private val context: Context) {
             object : CameraCaptureSession.StateCallback() {
                 override fun onConfigured(session: CameraCaptureSession) {
                     captureSession = session
+                    val previewRequest = camera.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW).apply {
+                        addTarget(reader.surface)
+                        set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO)
+                        set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE)
+                        set(CaptureRequest.CONTROL_AE_MODE, CaptureRequest.CONTROL_AE_MODE_ON)
+                    }.build()
+                    session.setRepeatingRequest(previewRequest, null, cameraHandler)
+                    cameraWarmupUntilMs = System.currentTimeMillis() + CAMERA_WARMUP_MS
+                    Log.i(TAG, "CAMERA_SESSION_CREATED")
+                    Log.i(TAG, "CAMERA_PREVIEW_STARTED")
+                    Log.i(TAG, "CAMERA_WARMUP_STARTED for $CAMERA_WARMUP_MS ms")
                 }
 
                 override fun onConfigureFailed(session: CameraCaptureSession) {
@@ -236,6 +255,12 @@ class CameraController(private val context: Context) {
     private fun triggerStillCapture() {
         if (!isCapturing.compareAndSet(false, true)) {
             cameraHandler.postDelayed({ triggerStillCapture() }, 150)
+            return
+        }
+        if (isWarmingUp()) {
+            Log.i(TAG, "Still capture delayed until warmup complete")
+            cameraHandler.postDelayed({ triggerStillCapture() }, 500)
+            isCapturing.set(false)
             return
         }
         val camera = cameraDevice
@@ -308,6 +333,10 @@ class CameraController(private val context: Context) {
     }
 
     private fun updateObstructionState(cameraId: String, bytes: ByteArray) {
+        if (isWarmingUp()) {
+            Log.i(TAG, "Skipping obstruction detection during warmup for $cameraId")
+            return
+        }
         val brightness = averageBrightness(bytes)
         if (brightness < OBSTRUCTION_BRIGHTNESS_THRESHOLD) {
             val count = darkFrameCounts.merge(cameraId, 1) { old, _ -> old + 1 } ?: 1
@@ -466,7 +495,8 @@ class CameraController(private val context: Context) {
         private const val SHUTDOWN_WAIT_MS = 1_500L
         private const val OBSTRUCTION_BRIGHTNESS_THRESHOLD = 5.0
         private const val OBSTRUCTION_FRAME_COUNT = 30
-        private const val OBSTRUCTION_RECOVERY_MS = 60_000L
+        private const val OBSTRUCTION_RECOVERY_MS = 5_000L
+        private const val CAMERA_WARMUP_MS = 1_500L
         private const val BRIGHTNESS_SAMPLE_SIZE = 4096
     }
 }
