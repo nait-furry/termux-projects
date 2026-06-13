@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Message Intelligence</string>
+    <string name="accessibility_service_description">Experimental UI inspection service for message intelligence learning.</string>
+</resources>

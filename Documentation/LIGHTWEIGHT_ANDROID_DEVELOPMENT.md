@@ -36,22 +36,6 @@ java -version
 javac -version
 ```
 
-**On macOS**:
-
-```bash
-# Homebrew setup
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# Java
-brew install openjdk@17
-
-# Lightweight editor
-brew install vim neovim
-```
-
-**On Windows (WSL2 + Ubuntu)**:
-Same as Linux above.
-
 ### 1.2 Install Android SDK (CLI Only)
 
 **Download Command Line Tools**:
@@ -118,36 +102,6 @@ adb devices
 ### 1.3 Install Gradle (Optional, use Gradlew)
 
 For most projects, **Gradlew** (Gradle Wrapper) is built-in and preferred. But if needed:
-
-```bash
-# Download Gradle (optional)
-wget https://services.gradle.org/distributions/gradle-8.4-bin.zip
-unzip gradle-8.4-bin.zip
-sudo mv gradle-8.4 /opt/gradle
-
-# Set PATH (add to ~/.bashrc)
-export PATH="/opt/gradle/bin:$PATH"
-
-gradle --version
-```
-
-**Note**: We'll use Gradlew in projects, so this is optional.
-
-### 1.4 Install Kotlin Compiler (Optional)
-
-```bash
-# Via SDKMAN (easiest)
-curl -s "https://get.sdkman.io" | bash
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-sdk install kotlin
-
-# Or via package manager
-# Ubuntu
-sudo apt-get install kotlin
-
-# Verify
-kotlinc -version
-```
 
 ---
 
