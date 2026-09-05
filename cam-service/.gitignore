@@ -5,3 +5,6 @@ local.properties
 *.apk
 *.aab
 captures/
+**/build.gradle
+gradle*
+settings.gradle
