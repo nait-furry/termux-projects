@@ -47,3 +47,31 @@ Implement a `resource_guard` check called at the start of each scan loop iterati
 - The revised `network-recon.bash` (or a cleaned-up consolidated script, since the original is a loose collection of snippets), with the toggle-frequency, self-test, and resource-guard logic integrated.
 - A short changelog/comment block at the top of the file summarizing what changed from the throttled-environment assumptions to the new ones.
 - Inline comments on any new configurable thresholds (toggle rate cap, battery/temperature thresholds, session runtime cap) so they're easy to tune per device.
+
+
+
+# Rough:
+
+All green. Final cleanup and repo state check:
+run_commands(cd /home/fury/termux/aircrack/scripts/netScrape2.0 && rm -rf logs scans .sim && cd /home/fury/termux && git status --short aircrack/scripts/ && echo '---' && wc -l aircrack/scripts/netScrape2.0/network-recon.bash && tail -6 aircrack/scripts/netScrape2.0/network-recon.bash && echo '--- diff stat vs originals ---' && git -C /home/fury/termux status --short aircrack/scripts/netScrape/)
+⎿ ?? aircrack/scripts/netScrape2.0/.gitignore
+   ... 10 more lines
+▶ Thinking: ...n the interactive menu option for tests too.  Keep it concise but complete.
+Implementation complete and fully validated. Here's the summary.
+What was built
+/home/fury/termux/aircrack/scripts/netScrape2.0/network-recon.bash (new, 1,336 lines, executable) — a consolidated v1→v2.0 revision of the loose netScrape/network-recon.bash snippets, refactored from the existing consolidated structure of netScrape/netScript.bash. The original netScrape/ files are untouched. A .gitignore in netScrape2.0/ keeps runtime artifacts (logs/, scans/, .sim/) out of git.
+How the three requirement groups map to the code
+1. Throttle-disabled scan logic — the adaptive-backoff apparatus (SAME_DATA_THRESHOLD/ADAPTIVE_INCREMENT/FOREGROUND_MAX_SCAN_DELAY, adaptive_delay_backoff, reset_adaptive_delay) is gone, replaced by a flat FOREGROUND_SCAN_CYCLE + STALE_SCAN_CYCLES staleness heuristic. All radio toggles flow through one chokepoint force_toggle_cycle() that fires only on empty scans, presumed-stale plateaus, or throttle-safe fallback. check_throttle_state() runs dumpsys wifi | grep -i throttl (or THROTTLE_OVERRIDE) at startup; ACTIVE/INCONCLUSIVE → logged warning + toggle-heavy fallback. Radio warm-up waits are retained as hardware constants, with the AP-capture test as their per-device validation. Background mode never toggles.
+2. Field-readiness tests (--test / menu option 3) — each logs a clear PASS/FAIL/INCONCLUSIVE line and prints a summary with failure exit code: T1 throttle-state, T2 hash stability (both "no false fresh" and forced-change "no false negatives" halves), T3 controlled AP capture (BSSID appear/vanish within AP_DETECT_TIMEOUT), T4 ground-truth diff (formatted script-side BSSID list for manual Settings comparison + operator-reported missing BSSIDs), T5 failure-mode (stubbed failing scaninfo driven through the real recovery path, plus documented on-device scenarios), T6 walk-pace documented manual procedure.
+3. Resource safety — resource_guard() starts every loop iteration: hard 6/min toggle ceiling in a 60 s window (enforced in the single toggle chokepoint, independent of freshness logic), battery <18%→passive / ≤10%→pause, temperature ≥45°C→pause with 30 s cool-down recheck, 1200 s max session → auto-finalize. Wake lock is acquired only around toggles. Every [SCAN] line logs batt=% temp= toggles=N/60s=M mode= for post-hoc correlation.
+Verification performed (headless, via --simulate)
+- bash -n clean; full test suite: 9 PASS / 0 FAIL / 1 INCONCLUSIVE (mobility is inherently manual).
+- Foreground loop: staleness → toggle at 3 identical scans, budget accounting correct.
+- THROTTLE_OVERRIDE=active: throttle test FAILs, exit code 1 propagates; fallback mode toggles but is hard-capped at 6/min with warnings.
+- Battery 8% → pause loop, 15% → passive (0 toggles over 8 cycles), temp 50 °C → cool-down pause, background mode → 0 toggles.
+- Non-Termux host without --simulate fails with a clean error message.
+During the sim runs this also caught three real bugs, now fixed: get_scan_data were emitting log_msg DEBUG to stdout (corrupting $(...) captured scan JSON), resource_guard configured globals inside a command substitution subshell (battery always unknown), and test FAIL exit codes weren't propagated.
+On-device steps you still need (only possible on the phone)
+1. chmod +x network-recon.bash && ./network-recon.bash --diag — confirm permissions, throttle line, battery/thermal reporting.
+2. ./network-recon.bash --test — run the interactive AP-capture and ground-truth tests against real hardware.
+3. Tune thresholds at the top of the file if the device reports differently (e.g., BATTERY_TEMP_HIGH_THRESHOLD, FOREGROUND_SCAN_CYCLE, MAX_SESSION_RUNTIME_SEC).
