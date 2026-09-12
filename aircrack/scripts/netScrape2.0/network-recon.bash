@@ -84,7 +84,7 @@ readonly BATTERY_TEMP_HIGH_THRESHOLD=45  # battery temperature (deg C) above
 #   temperature - that is treated as unknown (no pause), not a crash.
 readonly PAUSE_RECHECK_INTERVAL=30    # seconds between resource re-checks while
 #   paused for low battery / high temperature.
-readonly MAX_SESSION_RUNTIME_SEC=1200 # 20 min hard cap: after this the script
+readonly MAX_SESSION_RUNTIME_SEC=1800 # 30 min hard cap: after this the script
 #   auto-stops and finalizes logs even if not manually interrupted.
 
 # --- Background / passive mode --------------------------------------------------
@@ -99,9 +99,12 @@ readonly AP_DETECT_TIMEOUT=60         # seconds to wait for the test AP BSSID to
 #   appear/disappear during the Controlled AP capture test.
 
 # --- File + session locations ---------------------------------------------------
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-readonly LOG_DIR="${SCRIPT_DIR}/logs"
-readonly JSON_DIR="${SCRIPT_DIR}/scans"
+# All outputs (logs + scan JSON) go to Android shared storage so they can be
+# pulled straight to a laptop: adb pull /storage/emulated/0/Termux/downloads/
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"  # used by --simulate stubs
+readonly OUTPUT_BASE="/storage/emulated/0/Termux/downloads"
+readonly LOG_DIR="${OUTPUT_BASE}/logs"    # wifi_scan_*.log session logs
+readonly JSON_DIR="${OUTPUT_BASE}/scans"  # networks_*.json exports
 readonly TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 
 # ============================================================================
