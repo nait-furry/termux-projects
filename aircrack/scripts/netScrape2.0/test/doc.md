@@ -67,7 +67,7 @@ Acquire the Termux wake lock to prevent the CPU from sleeping.
 [15:26:40] [INFO] Forcing radio refresh (toggle #5)...
 
 
-^[[23~^[[23~^[[23~^[[23~^[[23~^[[23~usage: termux-wake-lock
+usage: termux-wake-lock
 Acquire the Termux wake lock to prevent the CPU from sleeping.
 [15:27:05] [SCAN] networks=9 batt=62% temp=36.4C toggles=5/60s=2 mode=foreground
   Hans Von (28:de:e5:3a:30:d0) - Signal: nulldBm

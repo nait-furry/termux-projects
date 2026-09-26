@@ -1,0 +1,270 @@
+[
+  {
+    "bssid": "08:c0:21:e3:93:a1",
+    "frequency_mhz": 2412,
+    "rssi": -87,
+    "ssid": "CONNECT",
+    "timestamp": 228581350610,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[ESS]"
+  },
+  {
+    "bssid": "0c:c6:cc:43:63:50",
+    "frequency_mhz": 2422,
+    "rssi": -83,
+    "ssid": "Remotes centre 01.",
+    "timestamp": 228400938033,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS]"
+  },
+  {
+    "bssid": "14:57:9f:5b:8f:04",
+    "frequency_mhz": 2412,
+    "rssi": -86,
+    "ssid": "Sounds",
+    "timestamp": 228039812374,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-CCMP][WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "30:07:5c:d1:8d:0b",
+    "frequency_mhz": 2462,
+    "rssi": -85,
+    "ssid": "CONNECT",
+    "timestamp": 228581745784,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2452,
+    "capabilities": "[ESS][WPS]"
+  },
+  {
+    "bssid": "30:07:5c:d1:8f:ff",
+    "frequency_mhz": 2417,
+    "rssi": -88,
+    "ssid": "CONNECT",
+    "timestamp": 228536771657,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2427,
+    "capabilities": "[ESS][WPS]"
+  },
+  {
+    "bssid": "30:07:5c:d1:92:fa",
+    "frequency_mhz": 2462,
+    "rssi": -81,
+    "ssid": "netis-D192F8",
+    "timestamp": 228356888232,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2452,
+    "capabilities": "[ESS][WPS]"
+  },
+  {
+    "bssid": "30:e9:8e:f4:41:fc",
+    "frequency_mhz": 2442,
+    "rssi": -85,
+    "ssid": "beauty Spot spar",
+    "timestamp": 228040046385,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "34:a2:a2:fa:19:6e",
+    "frequency_mhz": 2432,
+    "rssi": -86,
+    "ssid": "Vmg",
+    "timestamp": 228002789670,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS]"
+  },
+  {
+    "bssid": "38:bc:01:56:60:7c",
+    "frequency_mhz": 2457,
+    "rssi": -73,
+    "ssid": "Back-Office",
+    "timestamp": 227889332196,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "3a:bc:01:56:60:7c",
+    "frequency_mhz": 2457,
+    "rssi": -76,
+    "ssid": "Wifi mtaani",
+    "timestamp": 227889338605,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[ESS]"
+  },
+  {
+    "bssid": "3a:bc:01:66:60:7c",
+    "frequency_mhz": 2457,
+    "rssi": -75,
+    "ssid": "Heha movers",
+    "timestamp": 227889325565,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[ESS]"
+  },
+  {
+    "bssid": "48:57:02:e9:a4:98",
+    "frequency_mhz": 2427,
+    "rssi": -87,
+    "ssid": "Rodney 01",
+    "timestamp": 228039902513,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "48:7b:6b:62:1f:b8",
+    "frequency_mhz": 2412,
+    "rssi": -74,
+    "ssid": "ELOHIM",
+    "timestamp": 227888948912,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS]"
+  },
+  {
+    "bssid": "58:b4:bb:16:6a:91",
+    "frequency_mhz": 2437,
+    "rssi": -80,
+    "ssid": "SONIC NET FREE WIFI",
+    "timestamp": 228002801647,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2447,
+    "capabilities": "[ESS]"
+  },
+  {
+    "bssid": "5a:b4:bb:56:6a:91",
+    "frequency_mhz": 2437,
+    "rssi": -81,
+    "ssid": "",
+    "timestamp": 228401044693,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2447,
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK+SAE-CCMP][ESS][MFPC]"
+  },
+  {
+    "bssid": "66:c6:d2:8b:bf:b5",
+    "frequency_mhz": 2412,
+    "rssi": -86,
+    "ssid": "DIRECT-D2-EPSON-8B3FB5",
+    "timestamp": 227888943195,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS][WPS]"
+  },
+  {
+    "bssid": "a4:00:e2:2c:26:48",
+    "frequency_mhz": 2422,
+    "rssi": -88,
+    "ssid": "trish",
+    "timestamp": 228002676040,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "a4:c6:4f:30:c1:38",
+    "frequency_mhz": 2417,
+    "rssi": -92,
+    "ssid": "No internet ",
+    "timestamp": 227888968991,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "b4:0f:3b:0c:39:90",
+    "frequency_mhz": 2432,
+    "rssi": -90,
+    "ssid": "Wholesalers ",
+    "timestamp": 228039943440,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2422,
+    "capabilities": "[WPA-PSK-CCMP][WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "b4:0f:3b:f2:64:b0",
+    "frequency_mhz": 2442,
+    "rssi": -63,
+    "ssid": "Private ",
+    "timestamp": 227889224011,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-CCMP][WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "c8:3a:35:0b:ab:70",
+    "frequency_mhz": 2437,
+    "rssi": -92,
+    "ssid": "Access Denied ",
+    "timestamp": 227889129967,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][WPA-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "e0:cc:7a:79:94:70",
+    "frequency_mhz": 2412,
+    "rssi": -74,
+    "ssid": "Kabs",
+    "timestamp": 227888933191,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "e0:cc:7a:79:94:71",
+    "frequency_mhz": 2412,
+    "rssi": -76,
+    "ssid": "Wakesho",
+    "timestamp": 227888935783,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "e8:68:19:18:44:8d",
+    "frequency_mhz": 2417,
+    "rssi": -80,
+    "ssid": "SWAP",
+    "timestamp": 227888958767,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS]"
+  },
+  {
+    "bssid": "e8:68:19:20:2b:40",
+    "frequency_mhz": 2412,
+    "rssi": -82,
+    "ssid": "Bonnie TECH Solutions",
+    "timestamp": 227888963617,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2422,
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS]"
+  },
+  {
+    "bssid": "f4:4c:7f:06:55:48",
+    "frequency_mhz": 2462,
+    "rssi": -70,
+    "ssid": "Caroline ",
+    "timestamp": 227889355527,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS]"
+  },
+  {
+    "bssid": "fc:11:65:a5:d7:f0",
+    "frequency_mhz": 2437,
+    "rssi": -87,
+    "ssid": "GoK_Public_WiFi",
+    "timestamp": 228040014829,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[ESS]"
+  },
+  {
+    "bssid": "fc:bc:d1:fa:a7:c0",
+    "frequency_mhz": 2447,
+    "rssi": -85,
+    "ssid": "it hurts when ip",
+    "timestamp": 228002880512,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "fc:bc:d1:fb:58:28",
+    "frequency_mhz": 2447,
+    "rssi": -88,
+    "ssid": "Linken",
+    "timestamp": 228040098438,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  }
+]

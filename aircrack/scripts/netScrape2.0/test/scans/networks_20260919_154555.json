@@ -1,0 +1,108 @@
+[
+  {
+    "bssid": "10:27:f5:57:7a:d4",
+    "frequency_mhz": 2417,
+    "rssi": -49,
+    "ssid": "Nunua Data!",
+    "timestamp": 69592328078,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2427,
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS][WPS]"
+  },
+  {
+    "bssid": "12:27:f5:57:7a:d4",
+    "frequency_mhz": 2417,
+    "rssi": -49,
+    "ssid": "Uptown Customers",
+    "timestamp": 69592332862,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2427,
+    "capabilities": "[WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS]"
+  },
+  {
+    "bssid": "24:16:6d:1a:ed:3a",
+    "frequency_mhz": 2412,
+    "rssi": -77,
+    "ssid": "CONNECT",
+    "timestamp": 69592244409,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[ESS]"
+  },
+  {
+    "bssid": "5c:09:79:31:e0:9c",
+    "frequency_mhz": 2457,
+    "rssi": -83,
+    "ssid": "Fiberstorm",
+    "timestamp": 69592632824,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS]"
+  },
+  {
+    "bssid": "88:bd:09:dc:99:4f",
+    "frequency_mhz": 2457,
+    "rssi": -76,
+    "ssid": "Wi-Fi @10/-",
+    "timestamp": 69592634972,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2447,
+    "capabilities": "[ESS][WPS]"
+  },
+  {
+    "bssid": "88:bd:09:dc:ac:f1",
+    "frequency_mhz": 2457,
+    "rssi": -70,
+    "ssid": "Wi-Fi @10/-",
+    "timestamp": 69592589568,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2447,
+    "capabilities": "[ESS][WPS]"
+  },
+  {
+    "bssid": "88:bd:09:dc:ac:f8",
+    "frequency_mhz": 2437,
+    "rssi": -21,
+    "ssid": "Wi-Fi @10/-",
+    "timestamp": 69592479934,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2427,
+    "capabilities": "[ESS][WPS]"
+  },
+  {
+    "bssid": "88:bd:09:e5:10:7f",
+    "frequency_mhz": 2457,
+    "rssi": -61,
+    "ssid": "Wi-Fi @10/-",
+    "timestamp": 69592581291,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2447,
+    "capabilities": "[ESS][WPS]"
+  },
+  {
+    "bssid": "88:bd:09:e5:10:9b",
+    "frequency_mhz": 2412,
+    "rssi": -87,
+    "ssid": "Wahoms",
+    "timestamp": 69592250030,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2422,
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS][WPS]"
+  },
+  {
+    "bssid": "9c:1d:36:d4:5a:5c",
+    "frequency_mhz": 2427,
+    "rssi": -79,
+    "ssid": "Husna",
+    "timestamp": 69592392794,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS]"
+  },
+  {
+    "bssid": "9e:1d:36:94:5a:5c",
+    "frequency_mhz": 2427,
+    "rssi": -76,
+    "ssid": "Wi-Fi @10/-",
+    "timestamp": 69709269136,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[ESS]"
+  }
+]

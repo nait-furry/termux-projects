@@ -1,0 +1,351 @@
+[
+  {
+    "bssid": "00:31:92:1a:69:7a",
+    "frequency_mhz": 2447,
+    "rssi": -89,
+    "ssid": "TP-Link_697A",
+    "timestamp": 457266448023,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2437,
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS][WPS]"
+  },
+  {
+    "bssid": "2c:0b:ab:82:ef:3c",
+    "frequency_mhz": 2452,
+    "rssi": -86,
+    "ssid": "Focus Hospital",
+    "timestamp": 457514823411,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "2c:58:e8:04:28:99",
+    "frequency_mhz": 2432,
+    "rssi": -77,
+    "ssid": "One in One",
+    "timestamp": 456921274521,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-CCMP][WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "30:07:5c:0f:2a:69",
+    "frequency_mhz": 2462,
+    "rssi": -84,
+    "ssid": "HILLYLINKS CONSTRUCTION LTD",
+    "timestamp": 457581567010,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2452,
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS][WPS]"
+  },
+  {
+    "bssid": "34:15:93:0a:3e:98",
+    "frequency_mhz": 2412,
+    "rssi": -93,
+    "ssid": "NCBA_NOW",
+    "timestamp": 457086018275,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][WPA-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "3c:ca:61:d0:2a:47",
+    "frequency_mhz": 2457,
+    "rssi": -88,
+    "ssid": "TECNO-TR109C-2A46",
+    "timestamp": 456855825557,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "3e:1b:9e:c6:bd:25",
+    "frequency_mhz": 2412,
+    "rssi": -84,
+    "ssid": "Galaxy A21",
+    "timestamp": 457420141678,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "3e:78:95:9d:85:d6",
+    "frequency_mhz": 2422,
+    "rssi": -85,
+    "ssid": "xplix2",
+    "timestamp": 456886174099,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2432,
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS]"
+  },
+  {
+    "bssid": "40:ed:00:f7:57:60",
+    "frequency_mhz": 2457,
+    "rssi": -86,
+    "ssid": "BENYKYMS",
+    "timestamp": 457514859558,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2447,
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS][WPS]"
+  },
+  {
+    "bssid": "40:ee:dd:9a:73:ac",
+    "frequency_mhz": 2427,
+    "rssi": -82,
+    "ssid": "ADPATH LABS",
+    "timestamp": 456660344846,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS]"
+  },
+  {
+    "bssid": "4c:49:68:5f:83:48",
+    "frequency_mhz": 2412,
+    "rssi": -91,
+    "ssid": "DVL hotspot ",
+    "timestamp": 457113377253,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[ESS]"
+  },
+  {
+    "bssid": "50:d4:f7:29:a1:38",
+    "frequency_mhz": 2412,
+    "rssi": -77,
+    "ssid": "Club_Phoenix",
+    "timestamp": 456538850110,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2422,
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS][WPS]"
+  },
+  {
+    "bssid": "5c:6a:ec:a0:56:06",
+    "frequency_mhz": 2452,
+    "rssi": -88,
+    "ssid": "OLAX_LTE_A05606",
+    "timestamp": 456905759957,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS][WPS]"
+  },
+  {
+    "bssid": "5c:7d:ae:f3:7a:13",
+    "frequency_mhz": 2437,
+    "rssi": -86,
+    "ssid": "MENTOR FCDC-BCKP",
+    "timestamp": 456886308249,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2427,
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS][WPS][MFPC]"
+  },
+  {
+    "bssid": "88:3f:d3:50:4e:fc",
+    "frequency_mhz": 2462,
+    "rssi": -88,
+    "ssid": "Kim's Lavish Closet",
+    "timestamp": 457334449407,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS]"
+  },
+  {
+    "bssid": "90:16:ba:0f:d8:c7",
+    "frequency_mhz": 2457,
+    "rssi": -80,
+    "ssid": "Rosalinado ",
+    "timestamp": 457266498467,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS][WPS]"
+  },
+  {
+    "bssid": "9a:ef:21:63:d7:eb",
+    "frequency_mhz": 2472,
+    "rssi": -87,
+    "ssid": "TECNO CAMON 30 C",
+    "timestamp": 457334542638,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "a2:cf:61:07:1f:d1",
+    "frequency_mhz": 2412,
+    "rssi": -72,
+    "ssid": "DIRECT-9c-2G-VklMTEFPTlY2NTFM",
+    "timestamp": 456905449195,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS][WPS]"
+  },
+  {
+    "bssid": "b0:be:76:d9:ec:fc",
+    "frequency_mhz": 2412,
+    "rssi": -85,
+    "ssid": "WAKILI",
+    "timestamp": 457546121178,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2422,
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS][WPS]"
+  },
+  {
+    "bssid": "b4:0f:3b:6f:b1:b8",
+    "frequency_mhz": 2432,
+    "rssi": -88,
+    "ssid": "FPL_Mentor",
+    "timestamp": 457334235029,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-CCMP][WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "b4:43:26:05:b3:e0",
+    "frequency_mhz": 2457,
+    "rssi": -86,
+    "ssid": "Beacon Land System",
+    "timestamp": 456921529752,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS]"
+  },
+  {
+    "bssid": "b4:fb:f9:3f:1f:f4",
+    "frequency_mhz": 2412,
+    "rssi": -86,
+    "ssid": "WIFI YA MTAA (No Password)",
+    "timestamp": 456724947000,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[ESS]"
+  },
+  {
+    "bssid": "b6:b2:56:79:b8:f6",
+    "frequency_mhz": 2412,
+    "rssi": -67,
+    "ssid": "TECNO POP 5 Pro",
+    "timestamp": 456538856003,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK+SAE-CCMP][ESS]"
+  },
+  {
+    "bssid": "b6:fb:f9:1f:1f:f4",
+    "frequency_mhz": 2412,
+    "rssi": -90,
+    "ssid": "Net ya Mtaa (No Password)",
+    "timestamp": 456724951009,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[ESS]"
+  },
+  {
+    "bssid": "b6:fb:f9:2f:1f:f4",
+    "frequency_mhz": 2412,
+    "rssi": -90,
+    "ssid": "Uzito Mtaani (No Password)",
+    "timestamp": 456719426692,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[ESS]"
+  },
+  {
+    "bssid": "b6:fb:f9:3f:1f:f4",
+    "frequency_mhz": 2412,
+    "rssi": -89,
+    "ssid": "Mitandao Super (No Password)",
+    "timestamp": 456719429481,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[ESS]"
+  },
+  {
+    "bssid": "ca:cd:55:89:68:82",
+    "frequency_mhz": 2437,
+    "rssi": -77,
+    "ssid": "MURANGA FREE CBD WIFI",
+    "timestamp": 457334232282,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[ESS]"
+  },
+  {
+    "bssid": "ca:cd:55:99:68:82",
+    "frequency_mhz": 2437,
+    "rssi": -74,
+    "ssid": "Sonic Net",
+    "timestamp": 457334240487,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[ESS]"
+  },
+  {
+    "bssid": "ca:cd:55:d9:68:82",
+    "frequency_mhz": 2437,
+    "rssi": -79,
+    "ssid": "",
+    "timestamp": 457581344335,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-CCMP][WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "ce:5e:c7:71:8b:60",
+    "frequency_mhz": 2462,
+    "rssi": -79,
+    "ssid": "Arsonpro.",
+    "timestamp": 456539275043,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK+SAE-CCMP][ESS]"
+  },
+  {
+    "bssid": "d0:37:45:83:35:c3",
+    "frequency_mhz": 2442,
+    "rssi": -85,
+    "ssid": "Customer Experience",
+    "timestamp": 457546366506,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS][WPS]"
+  },
+  {
+    "bssid": "d8:44:89:96:3f:5e",
+    "frequency_mhz": 2462,
+    "rssi": -92,
+    "ssid": "TP-Link_3F5E",
+    "timestamp": 457651572516,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-CCMP][WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "dc:c6:4b:34:7c:94",
+    "frequency_mhz": 2422,
+    "rssi": -89,
+    "ssid": "KARLTEX",
+    "timestamp": 456921219082,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS]"
+  },
+  {
+    "bssid": "e6:a8:b6:92:84:68",
+    "frequency_mhz": 2412,
+    "rssi": -88,
+    "ssid": "WIFI MTAANI",
+    "timestamp": 457446628366,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[ESS]"
+  },
+  {
+    "bssid": "e6:f5:d0:27:54:6d",
+    "frequency_mhz": 2437,
+    "rssi": -88,
+    "ssid": "AndroidAP_8830",
+    "timestamp": 456539073268,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK+SAE-CCMP][ESS]"
+  },
+  {
+    "bssid": "f0:25:8e:ad:36:dc",
+    "frequency_mhz": 2452,
+    "rssi": -85,
+    "ssid": "HUAWEI-2.4G-4jGt",
+    "timestamp": 456539141763,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "f4:e2:c6:36:8c:35",
+    "frequency_mhz": 2462,
+    "rssi": -77,
+    "ssid": "Ncba_one.",
+    "timestamp": 456921523361,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "fc:18:03:3f:36:a4",
+    "frequency_mhz": 2452,
+    "rssi": -90,
+    "ssid": "Platinum Credit Muranga CS",
+    "timestamp": 456660527532,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  }
+]

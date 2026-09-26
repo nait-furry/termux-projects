@@ -1,0 +1,329 @@
+[
+  {
+    "bssid": "02:8a:e2:32:bc:95",
+    "frequency_mhz": 2472,
+    "rssi": -81,
+    "ssid": "TECNO SPARK 50",
+    "timestamp": 224362236345,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "0c:61:f9:26:6d:21",
+    "frequency_mhz": 2462,
+    "rssi": -75,
+    "ssid": "SHARP BOYS WIFI",
+    "timestamp": 223972482547,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS][WPS][MFPC]"
+  },
+  {
+    "bssid": "0c:80:63:e7:1f:43",
+    "frequency_mhz": 2412,
+    "rssi": -87,
+    "ssid": "G4 LAB",
+    "timestamp": 224784653046,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[ESS][WPS]"
+  },
+  {
+    "bssid": "12:bd:a6:e9:81:5a",
+    "frequency_mhz": 2472,
+    "rssi": -86,
+    "ssid": "TECNO SPARK 10C",
+    "timestamp": 223214148414,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "12:e7:8b:52:30:66",
+    "frequency_mhz": 2457,
+    "rssi": -82,
+    "ssid": "Infinix HOT 30i",
+    "timestamp": 224004570625,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "28:ee:52:62:5e:6f",
+    "frequency_mhz": 2417,
+    "rssi": -86,
+    "ssid": "SCIT EXAMINATION OFFICE ",
+    "timestamp": 224722692879,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS][WPS]"
+  },
+  {
+    "bssid": "28:ee:52:62:6a:cc",
+    "frequency_mhz": 2457,
+    "rssi": -80,
+    "ssid": "IT Department",
+    "timestamp": 223214075709,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS][WPS]"
+  },
+  {
+    "bssid": "30:07:5c:0f:54:1c",
+    "frequency_mhz": 2412,
+    "rssi": -83,
+    "ssid": "Connect_HOTSPOT@10/=",
+    "timestamp": 224872463588,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2422,
+    "capabilities": "[ESS][WPS]"
+  },
+  {
+    "bssid": "32:96:cc:2b:e3:88",
+    "frequency_mhz": 2412,
+    "rssi": -75,
+    "ssid": "TECNO SPARK 40",
+    "timestamp": 223394360310,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "36:4c:15:04:01:c0",
+    "frequency_mhz": 2462,
+    "rssi": -68,
+    "ssid": "AndroidShare_9077",
+    "timestamp": 224744893495,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK+SAE-CCMP][ESS]"
+  },
+  {
+    "bssid": "3a:ee:52:62:5e:6f",
+    "frequency_mhz": 2417,
+    "rssi": -88,
+    "ssid": "",
+    "timestamp": 224813413997,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "3a:ee:52:62:6a:cc",
+    "frequency_mhz": 2457,
+    "rssi": -75,
+    "ssid": "",
+    "timestamp": 224723022610,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "42:f0:61:17:e3:a2",
+    "frequency_mhz": 2472,
+    "rssi": -88,
+    "ssid": "Ian",
+    "timestamp": 224004708310,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "46:2d:f0:f3:2e:fc",
+    "frequency_mhz": 2412,
+    "rssi": -85,
+    "ssid": "💎💎💎💎",
+    "timestamp": 224074331226,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "50:d4:f7:82:77:68",
+    "frequency_mhz": 2462,
+    "rssi": -84,
+    "ssid": "COMPUTER_SCIENCE",
+    "timestamp": 224813813956,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP+TKIP][RSN-PSK-CCMP+TKIP][WPA-PSK-CCMP+TKIP][ESS][WPS]"
+  },
+  {
+    "bssid": "50:d4:f7:82:7b:f1",
+    "frequency_mhz": 2437,
+    "rssi": -80,
+    "ssid": "MUT-F4-1",
+    "timestamp": 223394572972,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2427,
+    "capabilities": "[ESS][WPS]"
+  },
+  {
+    "bssid": "66:3a:64:b4:84:3e",
+    "frequency_mhz": 2412,
+    "rssi": -84,
+    "ssid": "INFINITY ",
+    "timestamp": 224722704067,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "7c:45:d0:33:a9:52",
+    "frequency_mhz": 2452,
+    "rssi": -88,
+    "ssid": "admin",
+    "timestamp": 223972402235,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP+TKIP][RSN-PSK-CCMP+TKIP][WPA-PSK-CCMP+TKIP][ESS][WPS]"
+  },
+  {
+    "bssid": "96:90:d5:d1:f0:ae",
+    "frequency_mhz": 2427,
+    "rssi": -66,
+    "ssid": "TECNO POP 9",
+    "timestamp": 224361902974,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "9c:05:d6:e9:df:d5",
+    "frequency_mhz": 2437,
+    "rssi": -64,
+    "ssid": "Murang'a University",
+    "timestamp": 223213843381,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "9c:05:d6:ed:73:e1",
+    "frequency_mhz": 2437,
+    "rssi": -88,
+    "ssid": "Murang'a University",
+    "timestamp": 224813593144,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "a2:05:d6:e9:df:d5",
+    "frequency_mhz": 2437,
+    "rssi": -64,
+    "ssid": "Vice-Chancellor",
+    "timestamp": 223213846587,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "a6:05:d6:e9:df:d5",
+    "frequency_mhz": 2437,
+    "rssi": -64,
+    "ssid": "eduroam",
+    "timestamp": 223213893532,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-EAP/SHA1-CCMP][RSN-EAP/SHA1-CCMP][ESS]"
+  },
+  {
+    "bssid": "a6:08:ea:0d:d8:da",
+    "frequency_mhz": 2412,
+    "rssi": -80,
+    "ssid": "samsung s7 edge",
+    "timestamp": 223213658258,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "a6:fd:42:5c:df:24",
+    "frequency_mhz": 2412,
+    "rssi": -75,
+    "ssid": "Redmi 13C",
+    "timestamp": 223972095921,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "aa:05:d6:e9:df:d5",
+    "frequency_mhz": 2437,
+    "rssi": -64,
+    "ssid": "",
+    "timestamp": 223213851968,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "b2:ef:23:99:41:15",
+    "frequency_mhz": 2447,
+    "rssi": -82,
+    "ssid": "TECNO POP 9",
+    "timestamp": 224299396415,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "b4:fb:e4:14:fb:3f",
+    "frequency_mhz": 2412,
+    "rssi": -88,
+    "ssid": "Murang'a University",
+    "timestamp": 224004221254,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "ba:fb:e4:14:fb:3f",
+    "frequency_mhz": 2412,
+    "rssi": -89,
+    "ssid": "eduroam",
+    "timestamp": 224004227963,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-EAP/SHA1-CCMP][RSN-EAP/SHA1-CCMP][ESS]"
+  },
+  {
+    "bssid": "c4:12:f5:7c:43:f8",
+    "frequency_mhz": 2462,
+    "rssi": -79,
+    "ssid": "HighTech",
+    "timestamp": 223214009191,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2452,
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS][WPS]"
+  },
+  {
+    "bssid": "c6:ef:af:d3:36:03",
+    "frequency_mhz": 2412,
+    "rssi": -76,
+    "ssid": "Makau's S26 Ultra",
+    "timestamp": 223213697933,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "ce:05:e1:80:63:06",
+    "frequency_mhz": 2462,
+    "rssi": -63,
+    "ssid": "OPPO A3x",
+    "timestamp": 223214061382,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[RSN-SAE-CCMP][ESS]"
+  },
+  {
+    "bssid": "d0:21:f9:ff:36:61",
+    "frequency_mhz": 2412,
+    "rssi": -77,
+    "ssid": "Murang'a University",
+    "timestamp": 223972074572,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "d6:21:f9:ff:36:61",
+    "frequency_mhz": 2412,
+    "rssi": -80,
+    "ssid": "eduroam",
+    "timestamp": 223972078516,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-EAP/SHA1-CCMP][RSN-EAP/SHA1-CCMP][ESS]"
+  },
+  {
+    "bssid": "e6:ab:47:55:13:0e",
+    "frequency_mhz": 2472,
+    "rssi": -85,
+    "ssid": "TECNO SPARK 50",
+    "timestamp": 224074837129,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "fc:39:64:16:18:4e",
+    "frequency_mhz": 2462,
+    "rssi": -87,
+    "ssid": "itel A36",
+    "timestamp": 223972552584,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS][WPS]"
+  }
+]

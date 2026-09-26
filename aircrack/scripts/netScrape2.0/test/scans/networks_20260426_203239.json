@@ -1,0 +1,67 @@
+[
+  {
+    "bssid": "14:30:04:e2:7a:a4",
+    "frequency_mhz": 2462,
+    "rssi": -81,
+    "ssid": "DANDE_LION",
+    "timestamp": 194376188924,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS]"
+  },
+  {
+    "bssid": "5c:09:79:ab:ed:6c",
+    "frequency_mhz": 2462,
+    "rssi": -64,
+    "ssid": "Littlefinger",
+    "timestamp": 196570817131,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS]"
+  },
+  {
+    "bssid": "68:81:e0:35:80:ac",
+    "frequency_mhz": 2437,
+    "rssi": -91,
+    "ssid": "CONNECT",
+    "timestamp": 194375982582,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[ESS]"
+  },
+  {
+    "bssid": "80:3f:5d:5d:6a:f0",
+    "frequency_mhz": 2462,
+    "rssi": -72,
+    "ssid": "SONIC NET FREE WIFI",
+    "timestamp": 194376177545,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2452,
+    "capabilities": "[ESS][WPS]"
+  },
+  {
+    "bssid": "80:69:33:17:de:e4",
+    "frequency_mhz": 2412,
+    "rssi": -79,
+    "ssid": "VLOW VISUALS",
+    "timestamp": 194375781847,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS]"
+  },
+  {
+    "bssid": "b4:0f:3b:0b:85:98",
+    "frequency_mhz": 2432,
+    "rssi": -47,
+    "ssid": "aOn",
+    "timestamp": 196570606744,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2422,
+    "capabilities": "[WPA-PSK-CCMP][WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  },
+  {
+    "bssid": "e0:37:66:9a:32:89",
+    "frequency_mhz": 2412,
+    "rssi": -89,
+    "ssid": "CONNECT",
+    "timestamp": 194375772684,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[ESS]"
+  }
+]

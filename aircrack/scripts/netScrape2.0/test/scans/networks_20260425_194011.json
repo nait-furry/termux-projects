@@ -1,0 +1,21 @@
+[
+  {
+    "bssid": "5c:09:79:ab:ed:6c",
+    "frequency_mhz": 2412,
+    "rssi": -66,
+    "ssid": "Littlefinger",
+    "timestamp": 103568424730,
+    "channel_bandwidth_mhz": "20",
+    "capabilities": "[WPA-PSK-TKIP+CCMP][WPA2-PSK-TKIP+CCMP][RSN-PSK-TKIP+CCMP][ESS]"
+  },
+  {
+    "bssid": "b4:0f:3b:0b:85:98",
+    "frequency_mhz": 2452,
+    "rssi": -15,
+    "ssid": "aOn",
+    "timestamp": 103568720524,
+    "channel_bandwidth_mhz": "40",
+    "center_frequency_mhz": 2442,
+    "capabilities": "[WPA-PSK-CCMP][WPA2-PSK-CCMP][RSN-PSK-CCMP][ESS]"
+  }
+]
